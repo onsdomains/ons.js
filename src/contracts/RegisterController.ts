@@ -1,9 +1,7 @@
 interface contractInterface {
-    abi: any,
-    address: string,
+    abi: Object[],
 }
 const RegisterController: contractInterface = {
-    address: '0x4990079DaEBE62e5dFcA009338f0c9fb084c8237',
     abi: [
         {
             inputs: [
@@ -261,6 +259,25 @@ const RegisterController: contractInterface = {
             outputs: [],
             stateMutability: 'payable',
             type: 'function',
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_name",
+                    "type": "string"
+                }
+            ],
+            "name": "getDomainID",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
         },
         {
             inputs: [],

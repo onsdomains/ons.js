@@ -5,24 +5,34 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-     "test": "jest --config jestconfig.json",
-     "build": "tsc",
-     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-     "lint": "tslint -p tsconfig.json",
-     "prepare": "npm run build",
-     "prepublishOnly": "npm test && npm run lint",
-     "preversion": "npm run lint",
-     "version": "npm run format && git add -A src",
-     "postversion": "git push && git push --tags"
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/onsdomains/ons.js"
   },
-  "keywords": ["ons", "oasis", "library"],
+  "keywords": [
+    "ons",
+    "oasis",
+    "library"
+  ],
   "author": "M3hrab Shayesteh",
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.5.0",
     "@types/jest": "^27.4.1",
+    "chai": "^4.3.6",
+    "ethereum-waffle": "^3.4.4",
+    "hardhat": "^2.9.3",
     "jest": "^27.5.1",
     "prettier": "^2.6.2",
     "ts-jest": "^27.1.4",
@@ -32,6 +42,7 @@
     "web3": "^1.7.3"
   },
   "dependencies": {
-    "ethers": "^5.6.3"
+    "axios": "^0.27.2",
+    "ethers": "^5.6.4"
   }
 }

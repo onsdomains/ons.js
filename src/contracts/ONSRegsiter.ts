@@ -1,9 +1,7 @@
 interface contractInterface {
-    abi: any,
-    address: string,
+    abi: Object[],
 }
 const ONSRegister: contractInterface = {
-    address: '0xFFb32987c496364cd752cB196bFBE01D8D0D7e48',
     abi: [
         {
             "inputs": [],
