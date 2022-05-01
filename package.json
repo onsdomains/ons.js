@@ -1,6 +1,6 @@
 {
   "name": "ons.js",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "ons library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -24,7 +24,7 @@
     "oasis",
     "library"
   ],
-  "author": "M3hrab Shayesteh",
+  "author": "Mehrab Shayesteh",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
