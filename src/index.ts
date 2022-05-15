@@ -68,15 +68,12 @@ class Name {
     private getTokenId = async () => {
         await this.initContracts();
         const tokenId = this.RegisterControllerC && await this.RegisterControllerC.getDomainID(this.name);
-        console.log(BigNumber.from(tokenId).toString());
         const isAvailable = this.ONSRegisterC && await this.ONSRegisterC.available(tokenId);
-        console.log('isAvailable', isAvailable);
         isAvailable && errorHandling({ reason: 'DOMAIN_IS_NOT_AVAILABLE' });
         return tokenId;
     }
     getAddress = async (): Promise<string | undefined> => {
         await this.initContracts();
-        console.log(this.name)
         try {
             const res = await this.ONSRegisterC?.getAddress(this.name)
             if (res == undefined) {
@@ -110,7 +107,6 @@ class Name {
         await this.initContracts();
         const tokenId = this.getTokenId();
         const avatar = await this.NFTResolverC?.getTokenURI(tokenId);
-        console.log(avatar)
         try {
             const res = await axios.get(avatar)
             return res?.data?.image ? res.data.image : 'https://service-ons.com/image/' + tokenId
