@@ -1,0 +1,36 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "INFTResolver",
+  "sourceName": "contracts/resolvers/profiles/INFTResolver.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "contract ABIHelper",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "NFTId",
+          "type": "uint256"
+        }
+      ],
+      "name": "NFTChanged",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220162c7f9168c7a94c7bb072438327bdd23b2fe6c97c896cdda666e6889e20273b64736f6c63430008040033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220162c7f9168c7a94c7bb072438327bdd23b2fe6c97c896cdda666e6889e20273b64736f6c63430008040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
