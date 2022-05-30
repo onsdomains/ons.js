@@ -109,9 +109,9 @@ class Name {
         const avatar = await this.NFTResolverC?.getTokenURI(tokenId);
         try {
             const res = await axios.get(avatar)
-            return res?.data?.image ? res.data.image : 'https://service-ons.com/image/' + tokenId
+            return res?.data?.image ? res.data.image : 'https://ons.money/img/avatar.png'
         } catch (error) {
-            errorHandling(error);
+            return 'https://ons.money/img/avatar.png';
         }
     }
     getYoutube = async (): Promise<string | undefined> => {
