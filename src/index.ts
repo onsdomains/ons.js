@@ -158,8 +158,8 @@ export default class ONS {
         this.provider = ethersProvider
     }
 
-    init = async () => {
-        this.AddressBookC = new ethers.Contract(AddressBook.address, AddressBook.abi).connect(this.provider)
+    init = async (addressBookAddress?: string) => {
+        this.AddressBookC = new ethers.Contract(addressBookAddress ? addressBookAddress : AddressBook.address, AddressBook.abi).connect(this.provider)
         const registerAddr = await this.AddressBookC.getContractAddress("ControllerContract")
         this.RegisterControllerC = new ethers.Contract(registerAddr, RegisterController.abi).connect(this.provider)
         const onsAddr = await this.AddressBookC.getContractAddress("BaseContract")
