@@ -3,7 +3,7 @@ interface contractInterface {
     address: string,
 }
 const AddressBook: contractInterface = {
-    address: '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6',
+    address: '0x6E90E3e98DFF171Aa101F463BA550765c1c78773',
     abi: [
         {
             "inputs": [],

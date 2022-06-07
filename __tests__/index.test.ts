@@ -5,19 +5,17 @@ import PublicResolver from '../src/contracts/PublicResolver';
 import RegisterController from '../src/contracts/RegisterController';
 import NFTResolver from '../src/contracts/NFTResolver';
 import ONS from '../src/index'
-const Web3 = require('web3');
-
+const addressBook = '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6'
 jest.setTimeout(20000)
 
 describe('get Address', () => {
     let ons: any = null;
     let address1: string;
     beforeAll(async () => {
-        const web3p = new Web3.providers.HttpProvider('http://127.0.0.1:8545/');
-        const provider = new ethers.providers.Web3Provider(web3p)
+        const provider = new ethers.providers.JsonRpcProvider();
         let privateKey = '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80';
         ons = new ONS({ provider })
-        await ons.init()
+        await ons.init(addressBook)
         const addr1 = new ethers.Wallet(privateKey, provider)
         address1 = addr1.address
         const ControllerAddress = await ons.getContractAddress("ControllerContract")
