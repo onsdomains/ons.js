@@ -6,7 +6,7 @@ import RegisterController from '../src/contracts/RegisterController';
 import NFTResolver from '../src/contracts/NFTResolver';
 import ONS from '../src/index'
 const Web3 = require('web3');
-const addressBook = 0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6
+const addressBook = '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6'
 jest.setTimeout(20000)
 
 describe('get Address', () => {
