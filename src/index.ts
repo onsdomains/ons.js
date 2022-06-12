@@ -105,10 +105,10 @@ class Name {
     }
     getAvatarUrl = async (): Promise<any | undefined> => {
         await this.initContracts();
-        const tokenId = this.getTokenId();
-        const avatar = await this.NFTResolverC?.getTokenURI(tokenId);
         try {
-            const res = await axios.get(avatar)
+            const tokenId = this.getTokenId();
+            const avatar = await this.NFTResolverC?.getTokenURI(tokenId);
+            const res = await axios.get(avatar);
             return res?.data?.image ? res.data.image : 'https://ons.money/img/avatar.png'
         } catch (error) {
             return 'https://ons.money/img/avatar.png';
