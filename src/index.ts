@@ -65,7 +65,7 @@ class Name {
             this.RegisterControllerC = new ethers.Contract(RegisterControllerAddress, RegisterController.abi, this.provider);
         }
     }
-    private getTokenId = async () => {
+    getTokenId = async () => {
         await this.initContracts();
         const tokenId = this.RegisterControllerC && await this.RegisterControllerC.getDomainID(this.name);
         const isAvailable = this.ONSRegisterC && await this.ONSRegisterC.available(tokenId);
