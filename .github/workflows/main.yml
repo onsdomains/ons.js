@@ -1,4 +1,4 @@
-name: ONS.js Package
+name: Node.js Package
 
 on:
   push:
