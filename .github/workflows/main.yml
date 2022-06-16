@@ -1,0 +1,21 @@
+name: ONS.js Package
+
+on:
+  push:
+      branches:
+        - master
+        
+jobs:
+  publish-gpr:
+    runs-on: ubunto-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: action/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+          scope: '@onsdomains'
+      - run: npm install
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB.TOKEN}}
