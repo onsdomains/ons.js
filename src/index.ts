@@ -65,7 +65,7 @@ class Name {
             this.RegisterControllerC = new ethers.Contract(RegisterControllerAddress, RegisterController.abi, this.provider);
         }
     }
-    private getTokenId = async () => {
+    getTokenId = async () => {
         await this.initContracts();
         const tokenId = this.RegisterControllerC && await this.RegisterControllerC.getDomainID(this.name);
         const isAvailable = this.ONSRegisterC && await this.ONSRegisterC.available(tokenId);
@@ -105,10 +105,10 @@ class Name {
     }
     getAvatarUrl = async (): Promise<any | undefined> => {
         await this.initContracts();
-        const tokenId = this.getTokenId();
-        const avatar = await this.NFTResolverC?.getTokenURI(tokenId);
         try {
-            const res = await axios.get(avatar)
+            const tokenId = this.getTokenId();
+            const avatar = await this.NFTResolverC?.getTokenURI(tokenId);
+            const res = await axios.get(avatar);
             return res?.data?.image ? res.data.image : 'https://ons.money/img/avatar.png'
         } catch (error) {
             return 'https://ons.money/img/avatar.png';
