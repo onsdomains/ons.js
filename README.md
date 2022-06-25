@@ -20,4 +20,4 @@ const = new ONS({provider})
 ```
 
 ## NOTE
-> We will update soon the read.me file!
+> We recommend to check our Official [Documentation](https://docs.ons.money/)
